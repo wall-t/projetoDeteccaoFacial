@@ -9,13 +9,18 @@ for i=1:10
    I = img;
    
     BB = step(FDetect,I);
+    
+    n = size(BB,1);
+    str_n = num2str(n);
+    str = strcat('O numero de detecções faciais é = ', str_n);
+    disp(str);
 
 figure,
 imshow(I); hold on
 for i = 1:size(BB,1)
     rectangle('Position',BB(i,:),'LineWidth',5,'LineStyle','-','EdgeColor','r');
 end
-title('Detec��o Facial');
+title('Detecção Facial');
 hold off;
 
     
